@@ -1,0 +1,46 @@
+
+<mat-card-title class="Pagename">Trailer</mat-card-title>
+  <mat-card-title class="searchbar">
+  <input placeholder="Search" type="search"  name="Search" (input)="onSearchChange($event.target.value)">
+</mat-card-title>
+
+<mat-card-content>
+
+  <div *ngFor="let trailer_ of trailerArray">
+    <mat-divider></mat-divider>
+    <a class="anchor-card"> 
+      <mat-card class="example-card">
+        <mat-card-header>          
+          <div mat-card-avatar class="example-header-image" [ngStyle]="{'background-image': 'url(' + trailer_.imageurl + ')'}"></div>
+          <div class="mat-card-header-text" style="width: 85%;">
+            <mat-card-title>Unit No. : {{ trailer_.unitno }}</mat-card-title>
+            <mat-card-subtitle>Make : {{ trailer_.make }}</mat-card-subtitle>
+            <mat-card-subtitle>Type : {{ trailer_.model }}</mat-card-subtitle>
+            <mat-card-subtitle>Year : {{ trailer_.year }}</mat-card-subtitle>
+            <mat-card-subtitle>Serial No. : {{ trailer_.serialno }}</mat-card-subtitle>
+            <mat-card-subtitle>License Plate : {{ trailer_.licenseplate }}</mat-card-subtitle>
+          </div>
+          <div _ngcontent-gss-c129="" class="example-button-container" style="align-self: center;">
+            <button _ngcontent-gss-c129="" mat-mini-fab="" color="primary" style="margin-bottom: 5px;" aria-label="Example icon button with a delete icon" class="mat-focus-indicator mat-mini-fab mat-button-base mat-primary" (click)="onUpdate(trailer_)"><span class="mat-button-wrapper" style="padding: 0px;"><mat-icon _ngcontent-gss-c129="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">edit</mat-icon></span><span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round"></span><span class="mat-button-focus-overlay"></span></button>
+            <button _ngcontent-gss-c129="" mat-mini-fab="" color="warn" aria-label="Example icon button with a home icon" class="mat-focus-indicator mat-mini-fab mat-button-base mat-warn" (click)="onDelete(trailer_.$key)"><span class="mat-button-wrapper" style="padding: 0px;"><mat-icon _ngcontent-gss-c129="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">delete</mat-icon></span><span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round"></span><span class="mat-button-focus-overlay"></span></button>
+          </div> 
+        </mat-card-header>
+      </mat-card>
+    </a>
+</div>    
+    
+  <mat-divider></mat-divider>
+ 
+
+ <mat-divider class="footercard"></mat-divider>
+</mat-card-content>
+
+<mat-card class="matpad btnbtpm" >
+  <a mat-button  (click)="onAdd()" >
+  <mat-icon>add</mat-icon>
+  Add New Trailer
+</a>
+</mat-card>
+
+
+ <router-outlet></router-outlet> 

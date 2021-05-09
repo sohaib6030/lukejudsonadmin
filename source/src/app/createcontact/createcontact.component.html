@@ -1,0 +1,51 @@
+<mat-card-title class="top-mar2">
+  New Contact
+</mat-card-title>
+<form [formGroup]="angularForm">
+<mat-card>
+
+  <div>
+    <mat-card class="mat-profile-img">
+      <picture>
+        <!--<source  srcset="https://media.istockphoto.com/vectors/london-red-phone-booth-vector-illustration-vector-id473247994">-->
+        <source  srcset="{{ image }}">
+        <img mat-card-image src="" alt="Profile image">
+      </picture>
+    </mat-card>
+    <mat-card>
+      <button mat-button color="black" (click)="selectImage.click()">
+        <mat-icon>add</mat-icon>
+        Upload an Image
+      </button>
+      <label>{{ contactimageName }}</label>      
+    </mat-card>
+
+  <mat-card>
+    <mat-card-actions>
+      <button mat-button color="black" (click)="selectFile.click()">
+        <mat-icon>add</mat-icon>
+        Upload an PDF
+      </button>
+      <label>{{ contactfileName }}</label>
+    </mat-card-actions>
+</mat-card>
+<!--<input type="file" #fileInput id="fileUpload" name="fileUpload" multiple="multiple" accept="image/*" (change)="contactOnFileChange($event)" />-->
+<input type="file" id="imageUpload" name="imageUpload" accept="image/*" style="display: none;" (change)="contactOnImageChange($event)" #selectImage/>
+<input type="file" id="fileUpload" name="fileUpload" accept="application/pdf" style="display: none;" (change)="contactOnFileChange($event)" #selectFile/>
+</div>
+    <mat-form-field>     
+      <input class="form-control" formControlName="companyname" matInput placeholder="Name/Company Name" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="tel" class="form-control" formControlName="number" matInput placeholder="Number" required>      
+    </mat-form-field>
+   
+</mat-card>
+</form>
+<mat-card-title class="btns">
+  <button mat-raised-button  [routerLink]="['/ContactsComponent']">Cancel</button>
+  <button type="submit" mat-raised-button class="save-btn" (click)="onSubmit()">Save</button>  
+</mat-card-title>
+
+
+

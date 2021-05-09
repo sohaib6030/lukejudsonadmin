@@ -1,0 +1,71 @@
+
+    <mat-card-title class="top-mar2">
+      New Equipment
+    </mat-card-title>
+
+<form [formGroup]="angularForm">
+  <mat-card>
+
+
+    <div>
+      <mat-card class="mat-profile-img">
+        <picture>
+          <source  srcset="{{ image }}">
+          <img mat-card-image src="" alt="Profile image">
+        </picture>
+      </mat-card>
+      <mat-card>
+        <button mat-button color="black" (click)="selectImage.click()">
+          <mat-icon>add</mat-icon>
+          Upload an Image
+        </button>
+        <label>{{ equipmentimageName }}</label>
+      </mat-card>
+      <mat-card>
+        <!-- <mat-card-content> -->
+          <!-- <ul> -->
+            <!-- <li *ngFor="let file of files"> -->
+               <!-- <mat-progress-bar [value]="file.progress"></mat-progress-bar>  -->
+               <!-- <span id="file-label">  -->
+              <!-- </span> -->
+            <!-- </li> -->
+          <!-- </ul> -->
+        <!-- </mat-card-content> -->
+    <mat-card-actions>
+      <button mat-button color="black" (click)="selectFile.click()">
+        <mat-icon>add</mat-icon>
+        Upload an PDF
+      </button>
+      <label>{{ equipmentfileName }}</label>
+    </mat-card-actions>
+  </mat-card>
+  <input type="file" id="imageUpload" name="imageUpload" accept="image/*" style="display: none;" (change)="equipmentOnImageChange($event)" #selectImage/>
+  <input type="file" id="fileUpload" name="fileUpload" accept="application/pdf" style="display: none;" (change)="equipmentOnFileChange($event)" #selectFile/>
+</div>
+
+    <mat-form-field>      
+      <input class="form-control" formControlName="unitno" matInput placeholder="Unit No." required>
+    </mat-form-field>
+    <mat-form-field>      
+      <input class="form-control" formControlName="make" matInput placeholder="Make" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input class="form-control" formControlName="model" matInput placeholder="Model" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input class="form-control" formControlName="year" matInput placeholder="Year" required>
+    </mat-form-field>    
+    <mat-form-field>
+      <input class="form-control" formControlName="description" matInput placeholder="Description" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input class="form-control" formControlName="serialno" matInput placeholder="Serial No." required>
+    </mat-form-field>
+  </mat-card>
+
+  <mat-card-title class="btns">
+    <button mat-raised-button   [routerLink]="['/EquipmentComponent']">Cancel</button>    
+    <button type="submit" mat-raised-button class="save-btn" (click)="onSubmit()">Save</button>  
+  </mat-card-title>
+
+</form>
