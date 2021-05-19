@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1621376295080,
+  "timestamp": 1620592117374,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -46,7 +46,7 @@
     }
   ],
   "hashTable": {
-    "/index.html": "7f1aaaa81f4dea7b13878845e93f15e2438b942e",
+    "/index.html": "c3fd35cd87bc2f430e34ca44906b80d44dcc64f5",
     "/manifest.json": "4f186feb9a6dbe712b9585f65974ff8bd064eb40"
   },
   "navigationUrls": [
